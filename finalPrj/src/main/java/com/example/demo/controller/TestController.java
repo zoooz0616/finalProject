@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.service.ITestService;
 
@@ -29,7 +30,7 @@ public class TestController {
 		testService.updateTest();
 		return "redirect:/";
 	}
-	@PostMapping("delete")
+	@RequestMapping("delete")
 	public String delete() {
 		testService.deleteTest();
 		return "redirect:/";
