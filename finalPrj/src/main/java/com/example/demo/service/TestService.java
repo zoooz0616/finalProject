@@ -9,4 +9,24 @@ import com.example.demo.repository.ITestRepository;
 public class TestService implements ITestService {
 	@Autowired
 	ITestRepository testRepository;
+
+	@Override
+	public void createTest() {
+		testRepository.createTest();
+	}
+
+	@Override
+	public void updateTest() {
+		testRepository.updateTest();
+	}
+
+	@Override
+	public void deleteTest() {
+		testRepository.deleteTest();
+	}
+
+	@Override
+	public void selectTest() {
+		testRepository.selectTest();
+	}
 }
