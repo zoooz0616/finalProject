@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.ReadTest"></mapper>
+<mapper namespace="mapper.ReadTest">
+	<select id="selectTest">
+		<![CDATA[
+			select 
+				user_id		as "userId",
+				user_pw		as "userPw",
+				ninkname	as "nickName",
+				phone		as "phone",
+				join_date	as "joinDate",
+				update_date	as "updateDate",
+				memo		as "memo"
+			from test1
+		]]>
+	</select>
+
+</mapper>
