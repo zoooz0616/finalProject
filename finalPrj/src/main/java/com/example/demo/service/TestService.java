@@ -3,6 +3,7 @@ package com.example.demo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.model.TestVO;
 import com.example.demo.repository.ITestRepository;
 
 @Service
@@ -26,7 +27,8 @@ public class TestService implements ITestService {
 	}
 
 	@Override
-	public void selectTest() {
-		testRepository.selectTest();
+	public TestVO selectTest(String userId) {
+		return testRepository.selectTest(userId);
 	}
+
 }

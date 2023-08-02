@@ -4,8 +4,8 @@
 	<update id="updateTest" >
    <![CDATA[
      UPDATE test1
-     SET nickname="alio", update_date=SYSDATE
-     WHERE user_id='kcc'
+     SET nickname='alio', update_date=SYSDATE
+     WHERE user_id='team3'
    ]]>
 	</update>
 </mapper>

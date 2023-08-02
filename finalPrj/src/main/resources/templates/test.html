@@ -5,21 +5,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
-		안녕하시와요
-		<span th:text="${name}"></span>
-	</div>
-	<div>
-		<a th:href="@{/create}">CREATE</a>
-	</div>
-	<div>
-		<a th:href="@{/update}">UPDATE</a>
-	</div>
-	<div>
-		<a th:href="@{/read}">READ</a>
-	</div>
-	<div>
-		<a th:href="@{/delete}">DELETE</a>
-	</div>
+   <div>
+      안녕하시와요
+      <span th:text="${name}"></span>
+   </div>
+   <div>
+      <a th:href="@{/create}">CREATE</a>
+   </div>
+   <div>
+      <a th:href="@{/update}">UPDATE</a>
+   </div>
+   <div>
+      <a th:href="@{/select}">READ</a>
+   </div>
+   <div>
+      <a th:href="@{/delete}">DELETE</a>
+   </div>
+   <div th:text="${userId}">
+      유저의 아이디
+   </div>
 </body>
 </html>

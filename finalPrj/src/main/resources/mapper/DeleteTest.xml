@@ -4,7 +4,7 @@
 
 	<delete id="deleteTest">
    <![CDATA[
-	   	DELETE FROM test1 WHERE user_id = 'deleteTest'
+	   	DELETE FROM test1 WHERE user_id = 'team3'
    ]]>
 	</delete>
 

@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.repository.ITestRepository">
-	<select id="selectTest">
+	<resultMap id="userResult"
+		type="com.example.demo.model.TestVO">
+		<result property="userId" column="USER_ID" />
+		<result property="userPw" column="USER_PW" />
+		<result property="nickname" column="NICKNAME" />
+		<result property="phone" column="PHONE" />
+		<result property="joinDate" column="JOIN_DATE" />
+		<result property="updateDate" column="UPDATE_DATE" />
+		<result property="memo" column="MEMO" />
+	</resultMap>
+
+	<select id="selectTest" resultType="com.example.demo.model.TestVO" 
+	resultMap="userResult" parameterType="string">
 		<![CDATA[
-			select 
-				user_id		as "userId",
-				user_pw		as "userPw",
-				ninkname	as "nickName",
-				phone		as "phone",
-				join_date	as "joinDate",
-				update_date	as "updateDate",
-				memo		as "memo"
+			select *
 			from test1
+			where user_id=#{userId}
 		]]>
 	</select>
 
