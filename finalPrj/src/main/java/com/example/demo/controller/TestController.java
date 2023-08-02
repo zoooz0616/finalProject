@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.model.TestVO;
@@ -55,17 +56,24 @@ public class TestController {
 
 	@GetMapping("/delete")
 	public String delete(Model model) {
-		model.addAttribute("testVO", testVO);
-		testService.deleteTest();
-		return "test";
+		List<TestVO> testVOList = new ArrayList<TestVO>();
+		testVOList = testService.selectTest();
+		model.addAttribute("testVOList", testVOList);
+		return "delete";
+	}
+	
+	@GetMapping("/delete/{userId}")
+	public String delete(@PathVariable String userId, Model model) {
+		testService.deleteTest(userId);
+		return "redirect:/delete";
 	}
 
-	 @GetMapping("/select")
-	   public String select(Model model) {
-	      List<TestVO> testVOList = new ArrayList<TestVO>();
-	      testVOList = testService.selectTest();
-	      model.addAttribute("testVOList",testVOList);
-	      return "read";
-	   }
+	@GetMapping("/select")
+	public String select(Model model) {
+		List<TestVO> testVOList = new ArrayList<TestVO>();
+		testVOList = testService.selectTest();
+		model.addAttribute("testVOList", testVOList);
+		return "read";
+	}
 
 }

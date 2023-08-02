@@ -14,7 +14,7 @@ public interface ITestRepository {
 
 	void updateTest();
 
-	void deleteTest();
+	void deleteTest(String userId);
 
 	List<TestVO> selectTest();
 }

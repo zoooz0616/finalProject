@@ -9,7 +9,7 @@ public interface ITestService {
 
 	void updateTest();
 
-	void deleteTest();
+	void deleteTest(String userId);
 
 	List<TestVO> selectTest();
 }

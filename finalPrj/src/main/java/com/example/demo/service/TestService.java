@@ -24,14 +24,12 @@ public class TestService implements ITestService {
 	}
 
 	@Override
-	public void deleteTest() {
-		testRepository.deleteTest();
+	public void deleteTest(String userId) {
+		testRepository.deleteTest(userId);
 	}
 
 	@Override
 	public List<TestVO> selectTest() {
 		return testRepository.selectTest();
 	}
-
-
 }
