@@ -8,8 +8,11 @@ import com.example.demo.model.TestVO;
 @Repository
 @Mapper
 public interface ITestRepository {
-	void createTest();
+	void createTest(TestVO testVO);
+
 	void updateTest();
+
 	void deleteTest();
+
 	TestVO selectTest(String userId);
 }

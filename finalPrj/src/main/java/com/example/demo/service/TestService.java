@@ -12,8 +12,8 @@ public class TestService implements ITestService {
 	ITestRepository testRepository;
 
 	@Override
-	public void createTest() {
-		testRepository.createTest();
+	public void createTest(TestVO testVO) {
+		testRepository.createTest(testVO);
 	}
 
 	@Override

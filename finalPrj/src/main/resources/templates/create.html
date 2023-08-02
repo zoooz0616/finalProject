@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/create" th:object="${test1}" id="create_form"
+		method="POST">
+		<div>
+			<div>
+				<div>
+					<p>아이디</p>
+					<input type="text" name="userId" placeholder="이메일을 입력해주세요." />
+					<p>비밀번호</p>
+					<input type="password" name="userPw" placeholder="비밀번호를 입력해주세요." />
+					<p>이름</p>
+					<input type="text" name="nickname" placeholder="이름을 입력해주세요." />
+					<p>전화번호</p>
+					<input type="text" name="phone" placeholder="전화번호를 입력해주세요." />
+					<p>메모</p>
+					<input type="text" name="memo" placeholder="메모를 입력해주세요." />
+				</div>
+			</div>
+			<div>
+				<input type="submit" value="생성">
+			</div>
+		</div>
+	</form>
+</body>
+</html>
