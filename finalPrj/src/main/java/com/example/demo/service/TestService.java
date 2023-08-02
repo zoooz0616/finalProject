@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,8 +29,9 @@ public class TestService implements ITestService {
 	}
 
 	@Override
-	public TestVO selectTest(String userId) {
-		return testRepository.selectTest(userId);
+	public List<TestVO> selectTest() {
+		return testRepository.selectTest();
 	}
+
 
 }

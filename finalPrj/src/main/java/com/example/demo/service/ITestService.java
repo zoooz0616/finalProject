@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import com.example.demo.model.TestVO;
 
 public interface ITestService {
@@ -9,5 +11,5 @@ public interface ITestService {
 
 	void deleteTest();
 
-	TestVO selectTest(String userId);
+	List<TestVO> selectTest();
 }

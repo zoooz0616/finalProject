@@ -1,5 +1,8 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -57,15 +60,12 @@ public class TestController {
 		return "test";
 	}
 
-	@GetMapping("/select")
-	public String select(Model model) {
-		testVO = testService.selectTest("team3");
-		if (testVO == null) {
-			model.addAttribute("userId", "null");
-		} else {
-			System.out.println(testVO.getUserId());
-			model.addAttribute("userId", testVO.getUserId());
-		}
-		return "test";
-	}
+	 @GetMapping("/select")
+	   public String select(Model model) {
+	      List<TestVO> testVOList = new ArrayList<TestVO>();
+	      testVOList = testService.selectTest();
+	      model.addAttribute("testVOList",testVOList);
+	      return "read";
+	   }
+
 }

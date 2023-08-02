@@ -1,5 +1,7 @@
 package com.example.demo.repository;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -14,5 +16,5 @@ public interface ITestRepository {
 
 	void deleteTest();
 
-	TestVO selectTest(String userId);
+	List<TestVO> selectTest();
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>userId</th>
+			<th>userPw</th>
+			<th>nickname</th>
+			<th>phone</th>
+			<th>joinDate</th>
+			<th>updateDate</th>
+			<th>memo</th>
+		</tr>
+		<tr th:each="testVO : ${testVOList}">
+			<td><a href="update/" th:text="${testVO.userId}"></a></td>
+			<td th:text="${testVO.userPw}"></td>
+			<td th:text="${testVO.nickname}"></td>
+			<td th:text="${testVO.phone}"></td>
+			<td th:text="${testVO.joinDate}"></td>
+			<td th:text="${testVO.updateDate}"></td>
+			<td th:text="${testVO.memo}"></td>
+		</tr>
+	</table>
+</body>
+</html>

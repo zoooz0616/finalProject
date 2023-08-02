@@ -17,7 +17,6 @@
 		<![CDATA[
 			select *
 			from test1
-			where user_id=#{userId}
 		]]>
 	</select>
 
