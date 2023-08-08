@@ -47,13 +47,25 @@ public class TestController {
 		return "redirect:/";
 	}
 
-	@GetMapping("/update")
-	public String update(Model model) {
+	@GetMapping("/update/{userId}")
+	public String update(@PathVariable String userId, Model model) {
+		TestVO testVO= testService.getTestVO(userId);
 		model.addAttribute("testVO", testVO);
-		testService.updateTest();
-		return "test";
+		return "update";
 	}
 
+	@PostMapping("/update")
+	public String update(HttpServletRequest request) {
+		TestVO testVO = new TestVO();
+		testVO.setUserId(request.getParameter("userId"));
+		testVO.setUserPw(request.getParameter("userPw"));
+		testVO.setNickname(request.getParameter("nickname"));
+		testVO.setPhone(request.getParameter("phone"));
+		testVO.setMemo(request.getParameter("memo"));
+		testService.updateTest(testVO);
+		return "redirect:/select";
+	}
+	
 	@GetMapping("/delete")
 	public String delete(Model model) {
 		List<TestVO> testVOList = new ArrayList<TestVO>();

@@ -7,9 +7,11 @@ import com.example.demo.model.TestVO;
 public interface ITestService {
 	void createTest(TestVO testVO);
 
-	void updateTest();
+	void updateTest(TestVO testVO);
 
 	void deleteTest(String userId);
 
 	List<TestVO> selectTest();
+
+	TestVO getTestVO(String userId);
 }

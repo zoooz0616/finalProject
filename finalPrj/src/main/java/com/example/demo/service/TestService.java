@@ -19,8 +19,8 @@ public class TestService implements ITestService {
 	}
 
 	@Override
-	public void updateTest() {
-		testRepository.updateTest();
+	public void updateTest(TestVO testVO) {
+		testRepository.updateTest(testVO);
 	}
 
 	@Override
@@ -31,5 +31,10 @@ public class TestService implements ITestService {
 	@Override
 	public List<TestVO> selectTest() {
 		return testRepository.selectTest();
+	}
+
+	@Override
+	public TestVO getTestVO(String userId) {
+		return testRepository.getTestVO(userId);
 	}
 }

@@ -1,12 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.repository.ITestRepository">
-	<update id="updateTest" >
+
+
+	<select id="getTestVO"
+		resultType="com.example.demo.model.TestVO" parameterType="string">
+		<![CDATA[
+			select
+				user_id		as "userId",
+				user_pw		as "userPw",
+				nickname	as "nickname",
+				phone		as "phone",
+				join_date	as "joinDate",
+				update_date	as "updateDate",
+				memo		as "memo"
+			from test1
+			where user_id = #{userId}
+		]]>
+	</select>
+
+	<update id="updateTest" parameterType="com.example.demo.model.TestVO" >
    <![CDATA[
      UPDATE test1
-     SET nickname='alio', update_date=SYSDATE
-     WHERE user_id='team3'
+     	SET 
+     		user_pw=#{userPw}, 
+     		nickname=#{nickname}, 
+     		phone=#{phone},
+     		update_date=SYSDATE, 
+     		memo=#{memo}
+     WHERE user_id=#{userId}
    ]]>
 	</update>
+
+
 </mapper>
    

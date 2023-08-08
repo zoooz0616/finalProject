@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <form th:object="${testVO}" th:action="@{/update}" id="update_form" method="POST">
+   		<div>
+			<div>
+				<div>
+					<p>아이디</p>
+					<input type="text" name="userId" th:value="${testVO.userId}" readonly />
+					<p>비밀번호</p>
+					<input type="password" name="userPw" th:value="${testVO.userPw}" />
+					<p>이름</p>
+					<input type="text" name="nickname" th:value="${testVO.nickname}"/>
+					<p>전화번호</p>
+					<input type="text" name="phone" th:value="${testVO.phone}" />
+					<p>메모</p>
+					<input type="text" name="memo" th:value="${testVO.memo}"/>
+				</div>
+			</div>
+			<div>
+				<input type="submit" value="수정">
+			</div>
+		</div>
+   </form>
+</body>
+</html>

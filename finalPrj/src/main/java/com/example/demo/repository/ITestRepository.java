@@ -12,9 +12,11 @@ import com.example.demo.model.TestVO;
 public interface ITestRepository {
 	void createTest(TestVO testVO);
 
-	void updateTest();
+	void updateTest(TestVO testVO);
 
 	void deleteTest(String userId);
 
 	List<TestVO> selectTest();
+
+	TestVO getTestVO(String userId);
 }
